@@ -4,17 +4,19 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Archives | 刘同学的博客</title>
+  <title>CKE | 刘同学的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="好好推公式，好好码代码，好好做调教">
-<meta property="og:type" content="website">
-<meta property="og:title" content="刘同学的博客">
-<meta property="og:url" content="http://liuxz.top/archives/index.html">
+  <meta name="description" content="原文地址 http://www.kdd.org/kdd2016/subtopic/view/collaborative-knowledge-base-embedding-for-recommender-systems  该论文发表于16年KDD，主要贡献为在推荐系统中引入了结构信息，文本数据，图像数据等知识库中的信息来提升推荐系统的质量。其中，结构信息采用TransR来得到实体的向量特征，文本数">
+<meta name="keywords">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CKE">
+<meta property="og:url" content="http://liuxz.top/2017/08/31/CKE/index.html">
 <meta property="og:site_name" content="刘同学的博客">
-<meta property="og:description" content="好好推公式，好好码代码，好好做调教">
+<meta property="og:description" content="原文地址 http://www.kdd.org/kdd2016/subtopic/view/collaborative-knowledge-base-embedding-for-recommender-systems  该论文发表于16年KDD，主要贡献为在推荐系统中引入了结构信息，文本数据，图像数据等知识库中的信息来提升推荐系统的质量。其中，结构信息采用TransR来得到实体的向量特征，文本数">
+<meta property="og:updated_time" content="2017-08-31T07:48:09.731Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="刘同学的博客">
-<meta name="twitter:description" content="好好推公式，好好码代码，好好做调教">
+<meta name="twitter:title" content="CKE">
+<meta name="twitter:description" content="原文地址 http://www.kdd.org/kdd2016/subtopic/view/collaborative-knowledge-base-embedding-for-recommender-systems  该论文发表于16年KDD，主要贡献为在推荐系统中引入了结构信息，文本数据，图像数据等知识库中的信息来提升推荐系统的质量。其中，结构信息采用TransR来得到实体的向量特征，文本数">
   
     <link rel="alternative" href="/atom.xml" title="刘同学的博客" type="application/atom+xml">
   
@@ -190,156 +192,98 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-CKE" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/31/CKE/" class="archive-article-date">
-  	<time datetime="2017-08-31T07:46:46.000Z" itemprop="datePublished">Aug 31</time>
+    <div class="article-meta">
+      <a href="/2017/08/31/CKE/" class="article-date">
+  	<time datetime="2017-08-31T07:46:46.000Z" itemprop="datePublished">2017-08-31</time>
 </a>
-        </div>
-    	 
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/31/CKE/">CKE</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CKE
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
+      </header>
       
-        </div></section>
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
       
+    
+    <div class="article-entry" itemprop="articleBody">
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
+        <blockquote>
+<p>原文地址</p>
+<p><a href="http://www.kdd.org/kdd2016/subtopic/view/collaborative-knowledge-base-embedding-for-recommender-systems" target="_blank" rel="external">http://www.kdd.org/kdd2016/subtopic/view/collaborative-knowledge-base-embedding-for-recommender-systems</a></p>
+</blockquote>
+<p>该论文发表于16年KDD，主要贡献为在推荐系统中引入了结构信息，文本数据，图像数据等知识库中的信息来提升推荐系统的质量。其中，结构信息采用TransR来得到实体的向量特征，文本数据与图像数据分别使用栈式降噪自编码（Stacked Denoising Auto-encoders, SDAE）与栈式卷积自编码（Stacked Convolutional Auto-encoders）来提取出向量特征。</p>
+<p>Item的向量表示是将最初的向量与来自知识库中的三个特征向量相结合。对于构建出的损失函数可以使用随机梯度下降来进行优化，从而实现基于异构数据的ranking推荐。</p>
+<a id="more"></a>
+<h2 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h2><p>目前最常用的矩阵分解方法的性能会因为矩阵过于稀疏而性能下降，同时也存在无法推荐新的item和冷启动等问题。基于内容的推荐无法很好的解决推荐结果的多样性问题。考虑到用户对于item的选择也会受到与item相关的其他信息的影响。因此，混合了协同过滤与其他信息的推荐系统通常可以更好地解决这些问题，从而得到更好的结果。</p>
+<p>知识库中通常包含了大量的信息，因此有部分工作将知识库作为其他信息来与协同过滤进行融合。然而，这些工作目前存在以下问题：</p>
+
+      
+    </div>
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/07/17/记录一次被入侵/" class="archive-article-date">
-  	<time datetime="2016-07-17T10:29:45.000Z" itemprop="datePublished">Jul 17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/07/17/记录一次被入侵/">记录一次被入侵</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/折腾/">折腾</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/07/17/记录一次被入侵/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          记录一次被入侵
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/06/03/124上的git-server/" class="archive-article-date">
-  	<time datetime="2016-06-03T14:26:52.000Z" itemprop="datePublished">Jun 3</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/06/03/124上的git-server/">124上的git-server</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/02/16/谁的论文最有可能被接受/" class="archive-article-date">
-  	<time datetime="2016-02-16T12:04:17.000Z" itemprop="datePublished">Feb 16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/02/16/谁的论文最有可能被接受/">谁的论文最有可能被接受:测量研究机构的影响</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/KDDcup/">KDDcup</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据挖掘/">数据挖掘</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/翻译/">翻译</a></li></ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/数据挖掘/">数据挖掘</a>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="CKE" data-title="CKE" data-url="http://liuxz.top/2017/08/31/CKE/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"liuxz"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
 
 </div>
       <footer id="footer">
@@ -365,8 +309,8 @@
 		mathjax: true,
 		animate: undefined,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: undefined
